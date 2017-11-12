@@ -82,7 +82,7 @@ void Car::setColor(char *color)
 	strcpy_s(m_color, color);
 }
 
-Car* Car::compareByYear(Car* car)
+Car &Car::compareByYear(Car &car)
 {
 	if (m_year > car->getYear())
 	{
@@ -91,11 +91,11 @@ Car* Car::compareByYear(Car* car)
 	return car;
 }
 
-Car* Car::compareByEngineVolume(Car* car)
+Car &Car::compareByEngineVolume(Car &car)
 {
-	if (m_engineVolume > car->getEngineVolume())
+	if (m_engineVolume > car.getEngineVolume())
 	{
-		return this;
+		return *this;
 	}
 	return car;
 }
