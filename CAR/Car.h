@@ -13,18 +13,18 @@ private:
 	char m_color[SIZE_STRING];
 
 public:
-	char * getMake();
+	const char * getMake() const;
 	void setMake(char *make);
-	char * getModel();
+	const char * getModel() const;
 	void setModel(char *model);
-	int getYear();
+	int getYear() const;
 	void setYear(int year);
-	int getEngineVolume();
+	int getEngineVolume() const;
 	void setEngineVolume(int engineVolume);
-	char * getColor();
+	const char * getColor() const;
 	void setColor(char *color);
-	Car* compareByYear(Car* car);
-	Car* compareByEngineVolume(Car* car);
+	Car &compareByYear(Car &car);
+	Car &compareByEngineVolume(Car &car);
 
 	friend std::ostream& operator<<(std::ostream& ostr, Car const& rhs);
 

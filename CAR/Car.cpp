@@ -18,7 +18,7 @@ Car::~Car()
 {
 }
 
-char * Car::getMake()
+const char * Car::getMake() const 
 {
 	return m_make;
 }
@@ -28,7 +28,7 @@ void Car::setMake(char *make)
 	strcpy_s(m_make, make);
 }
 
-char * Car::getModel()
+const char * Car::getModel() const
 {
 	return m_model;
 }
@@ -38,7 +38,7 @@ void Car::setModel(char *model)
 	strcpy_s(m_model, model);
 }
 
-int Car::getYear()
+int Car::getYear() const
 {
 	return m_year;
 }
@@ -55,7 +55,7 @@ void Car::setYear(int year)
 	}
 }
 
-int Car::getEngineVolume()
+int Car::getEngineVolume() const
 {
 	return m_engineVolume;
 }
@@ -72,7 +72,7 @@ void Car::setEngineVolume(int engineVolume)
 	}
 }
 
-char * Car::getColor()
+const char * Car::getColor() const
 {
 	return m_color;
 }
@@ -84,9 +84,9 @@ void Car::setColor(char *color)
 
 Car &Car::compareByYear(Car &car)
 {
-	if (m_year > car->getYear())
+	if (m_year > car.getYear())
 	{
-		return this;
+		return *this;
 	}
 	return car;
 }

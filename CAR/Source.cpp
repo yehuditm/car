@@ -36,7 +36,7 @@ create two cars and compare between them.
 int main()
 {
 	Car * c1 = createANewCar(), * c2 = createANewCar();
-	cout << "The bigger when compare by year:\n" << *c1->compareByYear(c2) << "\n";
-	cout << "The bigger when compare by engine volume:\n" << *c1->compareByEngineVolume(c2) << "\n";
+	cout << "The bigger when compare by year:\n" << c1->compareByYear(*c2) << "\n";
+	cout << "The bigger when compare by engine volume:\n" << c1->compareByEngineVolume(*c2) << "\n";
 	return 0;
 }
